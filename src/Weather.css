@@ -1,0 +1,21 @@
+.Weather {
+  border: 2px solid #ec6e4c;
+  border-radius: 4px;
+  padding: 16px;
+  text-align: center;
+}
+
+.Weather h1 {
+  font-weight: 200;
+}
+
+.Weather .main-temp {
+  font-size: 50px;
+  color: #ec6e4c;
+}
+
+.Weather .unit {
+  margin-left: 6px;
+  position: relative;
+  top: -26px;
+}
