@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import DateFormatter from "./DateFormatter";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -15,6 +16,7 @@ export default function Weather(props) {
 
   function handleResponse(response) {
     setWeather({
+      dateTime: new Date(response.data.dt * 1000),
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: Math.round(response.data.main.temp),
       description: response.data.weather[0].description,
@@ -38,8 +40,10 @@ export default function Weather(props) {
       <div className="Weather">
         <div className="row">
           <div className="col">
-            <h1>{city}</h1>
-            <div className="text-muted">Saturday 18:35</div>
+            <h1 className="text-capitalize">{city}</h1>
+            <div className="text-muted">
+              <DateFormatter timestamp={weather.dateTime} />
+            </div>
             <br />
             <div className="row">
               <div className="col">
