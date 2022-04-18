@@ -19,3 +19,7 @@
   position: relative;
   top: -26px;
 }
+
+.Weather .unit a {
+  color: #ec6e4c;
+}

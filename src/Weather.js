@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import DateFormatter from "./DateFormatter";
+import UnitConverter from "./UnitConverter";
 import "./Weather.css";
 
 export default function Weather(props) {
@@ -51,8 +52,7 @@ export default function Weather(props) {
               </div>
               <div className="col">
                 <div>
-                  <span className="main-temp">{weather.temperature}</span>
-                  <span className="unit">°C</span>
+                  <UnitConverter celsius={weather.temperature} />
                 </div>
                 <div className="text-muted text-capitalize">
                   {weather.description}
