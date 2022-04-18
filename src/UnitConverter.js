@@ -11,14 +11,14 @@ export default function UnitConverter(props) {
       setTemp((temp * 9) / 5 + 32);
       setUnit("fahrenheit");
     } else {
-      setTemp(((temp - 32) * 5) / 9);
+      setTemp(props.celsius);
       setUnit("celsius");
     }
   }
 
   if (unit === "celsius") {
     return (
-      <div>
+      <div className="UnitConverter">
         <span className="main-temp">{Math.round(temp)}</span>
         <span className="unit">
           °C |{" "}
@@ -30,7 +30,7 @@ export default function UnitConverter(props) {
     );
   } else {
     return (
-      <div>
+      <div className="UnitConverter">
         <span className="main-temp">{Math.round(temp)}</span>
         <span className="unit">
           <a href="/" onClick={converter}>
