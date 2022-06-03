@@ -1,6 +1,6 @@
 import React from "react";
 import DateFormatter from "./DateFormatter";
-import UnitConverter from "./UnitConverter";
+import TempDisplay from "./TempDisplay";
 import "./WeatherData.css";
 
 export default function WeatherData(props) {
@@ -26,7 +26,7 @@ export default function WeatherData(props) {
             </div>
             <div className="col-7">
               <div>
-                <UnitConverter celsius={props.data.temperature} />
+                <TempDisplay celsius={props.data.temperature} />
               </div>
             </div>
           </div>
