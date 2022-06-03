@@ -1,0 +1,27 @@
+.WeatherData {
+  /* border: 2px solid #0b5ed7; */
+  border-radius: 4px;
+  background: #0b5dd71a;
+  padding: 12px;
+}
+
+.WeatherData h1 {
+  /* font-weight: 200; */
+  color: #0b5ed7;
+}
+
+.WeatherData .main-temp {
+  font-size: 76px;
+  color: #ec6e4c;
+}
+
+.WeatherData .unit {
+  margin-left: 6px;
+  position: relative;
+  top: -48px;
+  font-size: 18px;
+}
+
+.WeatherData .unit a {
+  color: #ec6e4c;
+}

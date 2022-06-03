@@ -1,10 +1,9 @@
 import React, { useState } from "react";
 import axios from "axios";
-import DateFormatter from "./DateFormatter";
-import UnitConverter from "./UnitConverter";
-import "./Weather.css";
+import WeatherData from "./WeatherData";
+import "./Search.css";
 
-export default function Weather(props) {
+export default function Search(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState(props.defaultCity);
@@ -18,8 +17,9 @@ export default function Weather(props) {
   function handleResponse(response) {
     setWeather({
       dateTime: new Date(response.data.dt * 1000),
+      city: response.data.name,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
-      temperature: Math.round(response.data.main.temp),
+      temperature: response.data.main.temp,
       description: response.data.weather[0].description,
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
@@ -32,61 +32,35 @@ export default function Weather(props) {
     search();
   }
 
-  function updateCity(event) {
+  function changeCity(event) {
     setCity(event.target.value);
   }
 
   if (ready) {
     return (
-      <div className="Weather">
-        <div className="row">
-          <div className="col">
-            <h1 className="text-capitalize">{city}</h1>
-            <div className="text-muted">
-              <DateFormatter timestamp={weather.dateTime} />
+      <div className="Search">
+        <form onSubmit={handleSubmit}>
+          <div className="row mb-3">
+            <div className="col-9">
+              <input
+                type="search"
+                placeholder="🔎 Enter a city"
+                className="form-control"
+                autoFocus="on"
+                onChange={changeCity}
+              />
             </div>
-            <br />
-            <div className="row">
-              <div className="col">
-                <img src={weather.icon} alt={weather.description}></img>
-              </div>
-              <div className="col">
-                <div>
-                  <UnitConverter celsius={weather.temperature} />
-                </div>
-                <div className="text-muted text-capitalize">
-                  {weather.description}
-                </div>
-              </div>
+            <div className="col-3">
+              <input
+                type="submit"
+                value="Search"
+                className="btn btn-primary w-100"
+              />
             </div>
           </div>
-          <div className="col">
-            <form onSubmit={handleSubmit}>
-              <div className="row">
-                <div className="col-9 p-0">
-                  <input
-                    type="search"
-                    placeholder="Enter a city"
-                    className="form-control"
-                    autoFocus="on"
-                    onChange={updateCity}
-                  />
-                </div>
-                <div className="col-3 p-0">
-                  <input
-                    type="submit"
-                    value="Search"
-                    className="btn btn-primary"
-                  />
-                </div>
-              </div>
-            </form>
-            <div className="mt-5">Humidity: {weather.humidity}%</div>
-            <div>Wind: {weather.wind} m/s</div>
-          </div>
-        </div>
-        <hr />
-        <div className="row">
+        </form>
+        <WeatherData data={weather} />
+        <div className="row mt-3">
           <div className="col">
             <div>Monday</div>
             <img
