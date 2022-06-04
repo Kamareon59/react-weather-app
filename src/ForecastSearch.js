@@ -1,8 +1,8 @@
 import React from "react";
 import axios from "axios";
-import "./Forecast.css";
+import "./ForecastSearch.css";
 
-export default function Forecast(props) {
+export default function ForecastSearch(props) {
   function handleResponse(response) {}
 
   const apiKey = "047115c33e71aaba35be74cb69e006be";
@@ -19,8 +19,8 @@ export default function Forecast(props) {
           className="forecast-icon"
         ></img>
         <div>
-          <span className="forecast-max">14</span>
-          <span className="forecast-min">9</span>
+          <span className="forecast-max">14°</span>
+          <span className="forecast-min">9°</span>
         </div>
       </div>
     </div>

@@ -1,12 +1,12 @@
 import React from "react";
-import Search from "./Search";
+import WeatherSearch from "./WeatherSearch";
 import "./App.css";
 
 function App() {
   return (
     <div className="App">
       <div className="container-fluid">
-        <Search defaultCity="Amsterdam" />
+        <WeatherSearch defaultCity="Amsterdam" />
         <footer>
           This project was{" "}
           <a

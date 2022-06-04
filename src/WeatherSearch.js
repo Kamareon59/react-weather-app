@@ -1,10 +1,10 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherData from "./WeatherData";
-import Forecast from "./Forecast";
-import "./Search.css";
+import ForecastSearch from "./ForecastSearch";
+import "./WeatherSearch.css";
 
-export default function Search(props) {
+export default function WeatherSearch(props) {
   const [ready, setReady] = useState(false);
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState(props.defaultCity);
@@ -40,7 +40,7 @@ export default function Search(props) {
 
   if (ready) {
     return (
-      <div className="Search">
+      <div className="WeatherSearch">
         <form onSubmit={handleSubmit}>
           <div className="row mb-3">
             <div className="col-9">
@@ -62,7 +62,7 @@ export default function Search(props) {
           </div>
         </form>
         <WeatherData data={weather} />
-        <Forecast coords={weather.coords} />
+        <ForecastSearch coords={weather.coords} />
         <hr />
       </div>
     );
