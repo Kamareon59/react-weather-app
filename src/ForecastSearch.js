@@ -32,6 +32,8 @@ export default function ForecastSearch(props) {
                 <ForecastData data={dailyForecast} />
               </div>
             );
+          } else {
+            return null;
           }
         })}
       </div>
