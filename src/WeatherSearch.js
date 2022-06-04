@@ -5,7 +5,7 @@ import ForecastSearch from "./ForecastSearch";
 import "./WeatherSearch.css";
 
 export default function WeatherSearch(props) {
-  const [ready, setReady] = useState(false);
+  const [loaded, setLoaded] = useState(false);
   const [weather, setWeather] = useState({});
   const [city, setCity] = useState(props.defaultCity);
 
@@ -26,7 +26,7 @@ export default function WeatherSearch(props) {
       humidity: response.data.main.humidity,
       wind: Math.round(response.data.wind.speed),
     });
-    setReady(true);
+    setLoaded(true);
   }
 
   function handleSubmit(event) {
@@ -38,7 +38,7 @@ export default function WeatherSearch(props) {
     setCity(event.target.value);
   }
 
-  if (ready) {
+  if (loaded) {
     return (
       <div className="WeatherSearch">
         <form onSubmit={handleSubmit}>
@@ -46,7 +46,7 @@ export default function WeatherSearch(props) {
             <div className="col-9">
               <input
                 type="search"
-                placeholder="🔎 Enter a city"
+                placeholder="🔎  Enter a city"
                 className="form-control"
                 autoFocus="on"
                 onChange={changeCity}
@@ -62,7 +62,8 @@ export default function WeatherSearch(props) {
           </div>
         </form>
         <WeatherData data={weather} />
-        <ForecastSearch coords={weather.coords} />
+        <hr />
+        <ForecastSearch coords={weather.coords} city={weather.city} />
         <hr />
       </div>
     );
