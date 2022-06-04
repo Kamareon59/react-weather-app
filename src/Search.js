@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import axios from "axios";
 import WeatherData from "./WeatherData";
+import Forecast from "./Forecast";
 import "./Search.css";
 
 export default function Search(props) {
@@ -18,6 +19,7 @@ export default function Search(props) {
     setWeather({
       dateTime: new Date(response.data.dt * 1000),
       city: response.data.name,
+      coords: response.data.coord,
       icon: `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`,
       temperature: response.data.main.temp,
       description: response.data.weather[0].description,
@@ -60,48 +62,7 @@ export default function Search(props) {
           </div>
         </form>
         <WeatherData data={weather} />
-        <div className="row mt-3">
-          <div className="col">
-            <div>Monday</div>
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt="Weather Icon"
-            ></img>
-            <div>14 °C</div>
-          </div>
-          <div className="col">
-            <div>Tuesday</div>
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt="Weather Icon"
-            ></img>
-            <div>18 °C</div>
-          </div>
-          <div className="col">
-            <div>Wednesday</div>
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt="Weather Icon"
-            ></img>
-            <div>16 °C</div>
-          </div>
-          <div className="col">
-            <div>Thursday</div>
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt="Weather Icon"
-            ></img>
-            <div>15 °C</div>
-          </div>
-          <div className="col">
-            <div>Friday</div>
-            <img
-              src="http://openweathermap.org/img/wn/02d@2x.png"
-              alt="Weather Icon"
-            ></img>
-            <div>14 °C</div>
-          </div>
-        </div>
+        <Forecast coords={weather.coords} />
         <hr />
       </div>
     );
