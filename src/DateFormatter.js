@@ -12,7 +12,8 @@ export default function DateFormatter(props) {
   ];
   const weekday = weekdays[props.timestamp.getDay()];
 
-  const hours = props.timestamp.getHours();
+  const hours =
+    (props.timestamp.getHours() < 10 ? "0" : "") + props.timestamp.getHours();
   const minutes =
     (props.timestamp.getMinutes() < 10 ? "0" : "") +
     props.timestamp.getMinutes();
