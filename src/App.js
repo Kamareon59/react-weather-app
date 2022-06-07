@@ -35,6 +35,7 @@ function App() {
             <a
               href="https://www.flaticon.com/authors/good-ware"
               title="Good Ware"
+              rel="noreferrer"
               target="_blank"
             >
               Good Ware
@@ -43,6 +44,7 @@ function App() {
             <a
               href="https://www.flaticon.com/authors/zlatko-najdenovski"
               title="Zlatko Najdenovski"
+              rel="noreferrer"
               target="_blank"
             >
               Zlatko Najdenovski
@@ -51,6 +53,7 @@ function App() {
             <a
               href="https://www.flaticon.com/"
               title="Flaticon"
+              rel="noreferrer"
               target="_blank"
             >
               Flaticon
