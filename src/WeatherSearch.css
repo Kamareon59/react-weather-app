@@ -1,6 +1,27 @@
 .WeatherSearch {
-  border: 2px solid #ec6e4c;
+  border: 3px solid var(--accent-colour);
   border-radius: 4px;
   padding: 16px;
   text-align: center;
+  background-color: #fff;
+}
+
+.WeatherSearch hr {
+  color: var(--secondary-colour);
+  height: 2px;
+  opacity: 1;
+}
+
+.WeatherSearch .btn-primary {
+  background-color: var(--primary-colour);
+}
+
+.WeatherSearch .btn-primary:hover {
+  background-color: var(--tertiary-colour);
+  border-color: var(--tertiary-colour);
+}
+
+.WeatherSearch .form-control {
+  border-width: 2px;
+  border-color: var(--secondary-colour);
 }

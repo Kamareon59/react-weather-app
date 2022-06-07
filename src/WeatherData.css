@@ -1,18 +1,23 @@
 .WeatherData {
-  /* border: 2px solid #0b5ed7; */
   border-radius: 4px;
-  background: #0b5dd71a;
-  padding: 12px;
+  padding: 7px;
+  transition: all 200ms ease-in-out;
+}
+
+.WeatherData:hover {
+  background-color: var(--tertiary-colour);
 }
 
 .WeatherData h1 {
-  /* font-weight: 200; */
-  color: #0b5ed7;
+  font-family: "Kaushan Script", cursive;
+  font-weight: 300;
+  color: var(--primary-colour);
+  font-size: 50px;
 }
 
 .WeatherData .main-temp {
   font-size: 76px;
-  color: #ec6e4c;
+  color: var(--primary-colour);
 }
 
 .WeatherData .unit {
@@ -21,10 +26,6 @@
   top: -48px;
   font-size: 18px;
 }
-
-/* .WeatherData .unit a {
-  color: var(--accent-colour);
-} */
 
 .WeatherData .main-icon {
   max-width: 80%;

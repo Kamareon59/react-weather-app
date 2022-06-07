@@ -10,7 +10,7 @@
 }
 
 .ForecastSearch .ForecastData:hover {
-  background: #0b5dd71a;
+  background: var(--tertiary-colour);
   border-radius: 4px;
   padding: 5px 0px;
 }
