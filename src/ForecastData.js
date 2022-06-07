@@ -1,4 +1,5 @@
 import React from "react";
+import Images from "./assets/images";
 
 export default function ForecastData(props) {
   function maxTemp() {
@@ -32,7 +33,7 @@ export default function ForecastData(props) {
     <div className="ForecastData">
       <div className="forecast-day">{day()}</div>
       <img
-        src={`http://openweathermap.org/img/wn/${props.data.weather[0].icon}@2x.png`}
+        src={Images[props.data.weather[0].icon]}
         alt="Weather Icon"
         className="forecast-icon"
       ></img>

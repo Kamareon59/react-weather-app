@@ -2,6 +2,7 @@ import React from "react";
 import DateFormatter from "./DateFormatter";
 // import TempDisplay from "./TempDisplay";
 import "./WeatherData.css";
+import Images from "./assets/images.js";
 
 export default function WeatherData(props) {
   return (
@@ -19,7 +20,11 @@ export default function WeatherData(props) {
         <div className="col text-center my-auto">
           <div className="row align-items-center">
             <div className="col-5">
-              <img src={props.data.icon} alt={props.data.description}></img>
+              <img
+                src={Images[props.data.icon]}
+                alt={props.data.description}
+                className="main-icon"
+              ></img>
               <div className="text-muted text-capitalize">
                 {props.data.description}
               </div>

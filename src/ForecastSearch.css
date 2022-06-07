@@ -14,3 +14,7 @@
   border-radius: 4px;
   padding: 5px 0px;
 }
+
+.ForecastSearch img {
+  max-width: 50%;
+}

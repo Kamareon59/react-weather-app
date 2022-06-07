@@ -22,6 +22,11 @@
   font-size: 18px;
 }
 
-.WeatherData .unit a {
-  color: #ec6e4c;
+/* .WeatherData .unit a {
+  color: var(--accent-colour);
+} */
+
+.WeatherData .main-icon {
+  max-width: 80%;
+  margin-bottom: 7px;
 }
